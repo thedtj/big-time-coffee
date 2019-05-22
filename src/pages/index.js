@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 import BackgroundSection from '../components/global/BackgroundSection'
-import { GiClaymoreExplosive } from 'react-icons/gi'
+import Info from '../components/home/Info'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -15,6 +15,7 @@ const IndexPage = ({ data }) => (
       title="Big Time Coffee"
       styleClass="default-background"
     />
+    <Info />
   </Layout>
 )
 
