@@ -23,8 +23,6 @@ const Navbar = () => {
           open: true,
           css: 'collapse navbar-collapse show',
         })
-
-    console.log(navbarStatus)
   }
 
   return (

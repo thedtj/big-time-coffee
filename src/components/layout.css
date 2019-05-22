@@ -33,7 +33,8 @@ h6 {
   font-size: 2rem;
 }
 
-.default-background {
+.default-background,
+.about-background {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -41,6 +42,10 @@ h6 {
   background: linear-gradient(rgba(255, 158, 9, 0.5), rgba(255, 157, 9, 0.253));
   background-position: center;
   background-size: cover;
+}
+
+.about-background {
+  min-height: 60vh;
 }
 
 .btn-yellow {
@@ -53,6 +58,6 @@ h6 {
   color: var(--mainBrown);
 }
 
-.footer{
+.footer {
   background: var(--mainBrown)
 }
