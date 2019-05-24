@@ -1,7 +1,7 @@
 :root {
   --mainBrown: #2d1e1f;
-  --mainYellow: rgb(255, 158, 9);
-  --mainGrey: #ece8dc;
+  --mainYellow: rgb(230, 151, 33);
+  --mainGrey: #e6e2d6;
   --mainWhite: #eee;
   --mainDark: #222
 }
@@ -60,4 +60,8 @@ h6 {
 
 .footer {
   background: var(--mainBrown)
+}
+
+.menu {
+  background: var(--mainGrey);
 }

@@ -6,18 +6,22 @@ import SEO from '../components/seo'
 
 import BackgroundSection from '../components/global/BackgroundSection'
 import Info from '../components/home/Info'
+import Menu from '../components/home/Menu'
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO title="Home" />
-    <BackgroundSection
-      img={data.img.childImageSharp.fluid}
-      title="Big Time Coffee"
-      styleClass="default-background"
-    />
-    <Info />
-  </Layout>
-)
+const IndexPage = ({ data }) => {
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <BackgroundSection
+        img={data.img.childImageSharp.fluid}
+        title="Big Time Coffee"
+        styleClass="default-background"
+      />
+      <Menu menu={data.menu} />
+      <Info />
+    </Layout>
+  )
+}
 
 export const query = graphql`
   {
@@ -25,6 +29,25 @@ export const query = graphql`
       childImageSharp {
         fluid {
           src
+        }
+      }
+    }
+    menu: allContentfulDrinks {
+      edges {
+        node {
+          id
+          name
+          price
+          category
+          image {
+            fixed(width: 50, height: 50) {
+              ...GatsbyContentfulFixed_tracedSVG
+            }
+          }
+          special
+          description {
+            description
+          }
         }
       }
     }
