@@ -18,12 +18,9 @@ const Menu = ({ menu }) => {
   const [categories, setCategories] = useState(getCategories(menu.edges))
 
   const handleItems = category => {
-    const tempItems = [...items]
     category === 'all'
-      ? setCoffeeItems(tempItems)
-      : setCoffeeItems(
-          tempItems.filter(({ node }) => node.category === category)
-        )
+      ? setCoffeeItems(items)
+      : setCoffeeItems(items.filter(({ node }) => node.category === category))
   }
   console.log(coffeeItems)
 
