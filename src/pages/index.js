@@ -3,10 +3,11 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-
 import BackgroundSection from '../components/global/BackgroundSection'
 import Info from '../components/home/Info'
 import Menu from '../components/home/Menu'
+import Products from '../components/home/Products'
+import Contact from '../components/home/Contact'
 
 const IndexPage = ({ data }) => {
   return (
@@ -17,8 +18,10 @@ const IndexPage = ({ data }) => {
         title="Big Time Coffee"
         styleClass="default-background"
       />
+      <Contact />
       <Menu menu={data.menu} />
       <Info />
+      <Products />
     </Layout>
   )
 }

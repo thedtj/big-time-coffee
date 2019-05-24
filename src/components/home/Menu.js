@@ -2,9 +2,9 @@ import React, { useState, setState } from 'react'
 import Title from '../global/Title'
 import Img from 'gatsby-image'
 
-const getCategories = items => {
-  const tempItems = items.map(items => {
-    return items.node.category
+const getCategories = fullMenu => {
+  const tempItems = fullMenu.map(fullMenu => {
+    return fullMenu.node.category
   })
   const tempCategories = new Set(tempItems)
   let categories = Array.from(tempCategories)
@@ -13,18 +13,18 @@ const getCategories = items => {
 }
 
 const Menu = ({ menu }) => {
-  const [items, setItems] = useState(menu.edges)
-  const [coffeeItems, setCoffeeItems] = useState(menu.edges)
+  const [fullMenu, setFullMenu] = useState(menu.edges)
+  const [displayMenu, setDisplaymenu] = useState(fullMenu)
   const [categories, setCategories] = useState(getCategories(menu.edges))
 
   const handleItems = category => {
     category === 'all'
-      ? setCoffeeItems(items)
-      : setCoffeeItems(items.filter(({ node }) => node.category === category))
+      ? setDisplaymenu(fullMenu)
+      : setDisplaymenu(
+          fullMenu.filter(({ node }) => node.category === category)
+        )
   }
-  console.log(coffeeItems)
-
-  return items.length > 0 ? (
+  return fullMenu.length > 0 ? (
     <section className="menu py-5">
       <div className="container">
         <Title title="Our Menu" />
@@ -45,9 +45,9 @@ const Menu = ({ menu }) => {
             ))}
           </div>
         </div>
-        {/* items */}
+        {/* fullMenu */}
         <div className="row mb-5">
-          {coffeeItems.map(({ node }) => {
+          {displayMenu.map(({ node }) => {
             return (
               <div
                 key={node.id}
