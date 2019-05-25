@@ -12,7 +12,15 @@ const Product = ({ product }) => {
           <p className="text-muted">
             <small>{product.description.description}</small>
           </p>
-          <button className="btn btn-yellow mt-3 text-capitalize">
+          <button
+            className="btn btn-yellow mt-3 text-capitalize snipcart-add-item"
+            data-item-id={product.id}
+            data-item-name={product.name}
+            data-item-price={product.price}
+            data-item-url="https://bigtimecoffee.netlify.com"
+            data-item-description={product.description.description}
+            data-item-image={product.image.fluid.src}
+          >
             Add to cart
           </button>
         </div>

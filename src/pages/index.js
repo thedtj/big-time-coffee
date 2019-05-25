@@ -18,10 +18,10 @@ const IndexPage = ({ data }) => {
         title="Big Time Coffee"
         styleClass="default-background"
       />
-      <Contact />
       <Menu menu={data.menu} />
       <Info />
       <Products />
+      <Contact />
     </Layout>
   )
 }
